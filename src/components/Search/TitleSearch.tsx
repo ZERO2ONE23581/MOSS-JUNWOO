@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { COLOR } from '../../constants';
 import useMutation from 'src/libs/client/useMutation';
 import { useForm } from 'react-hook-form';
-import { useRouter } from 'next/router';
 import { StudyList } from '../StudyList';
 import { SearchForm, Wrap } from 'src/styles/components/Search';
 import { SearchList } from './SearchList';
@@ -12,10 +11,8 @@ interface ISearch {
 }
 
 export const TitleSearch = () => {
-  const router = useRouter();
-
   //Post
-  const [searchTitle, { loading, data, error }] = useMutation(`/api/search`);
+  const [searchTitle, { loading, data }] = useMutation(`/api/search`);
   // console.log(data);
 
   //Submit
