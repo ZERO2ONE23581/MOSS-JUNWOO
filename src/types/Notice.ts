@@ -10,6 +10,9 @@ export interface ITotalNoticeRes {
 }
 
 export interface NoticeData {
+  category?: string;
+  title?: string;
+  content?: string;
   noticeList?: [{ category: string; title: string; content: string }];
 }
 export interface INoticeData {

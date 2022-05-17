@@ -13,9 +13,11 @@ interface CardProps {
   leader?: boolean;
   bgImg?: string;
   studyId?: number;
+  link: any;
 }
 
 export const StudyCard = ({
+  link,
   category,
   title,
   hashtag,

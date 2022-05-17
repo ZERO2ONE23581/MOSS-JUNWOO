@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import JoinInput from 'src/components/Join/JoinInput';
 import useMutation from 'src/libs/client/useMutation';
 import useUser from 'src/libs/client/useUser';
-import { IEditResponse } from 'src/types/Edit';
-import { joinForm } from 'src/types/Join';
+import { IEditResponse } from 'src/types/edit';
+import { joinForm } from 'src/types/join';
 import {
   Avatar,
   AvatarInput,

@@ -19,10 +19,13 @@ export const StudyComponents = () => {
 
   const [userCheck, setUserCheck] = useState<boolean>(false);
   useEffect(() => {
-    if (data?.study?.memberlist?.indexOf(loggedInUser?.userId) !== -1 || loggedInUser?.userId == data?.study?.user?.userId) {
+    if (
+      data?.study?.memberlist?.indexOf(loggedInUser?.userId) !== -1 ||
+      loggedInUser?.userId == data?.study?.user?.userId
+    ) {
       setUserCheck(true);
     }
-  }, [data?.study?.memberlist])
+  }, [data?.study?.memberlist]);
 
   return (
     <>
@@ -31,9 +34,9 @@ export const StudyComponents = () => {
           <TodoList studyId={data?.study?.id} />
           <Notice studyId={data?.study?.id} />
           <Member
-              leader={data?.study?.user}
-              memberlist={data?.study?.memberlist}
-              memberslimit={data?.study?.membersLimit}
+            leader={data?.study?.user}
+            memberlist={data?.study?.memberlist}
+            memberslimit={data?.study?.membersLimit}
           />
           <StudyCalendarWrap />
         </Container>
@@ -48,7 +51,7 @@ export const StudyComponents = () => {
           <Blur>
             <Container>
               <TodoList studyId={data?.study?.id} />
-              <Notice studyId={data?.study?.id}/>
+              <Notice studyId={data?.study?.id} />
               <Member
                 leader={data?.study?.user}
                 memberlist={data?.study?.memberlist}

@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
-import { StudyCard } from './StudyCard';
 import useSWR from 'swr';
 import { COLOR } from './../constants';
 import { useState } from 'react';
 import { IStudyResponse } from 'src/types/study';
+import { StudyCard } from './StudyCard';
+import { Study } from '@prisma/client';
 
 export const StudyList = () => {
   const { data } = useSWR<IStudyResponse>(`/api/study/total_study`);
-  //존재하는 모든 스터디를 화면에 표시합니다.
   const [showItem, setShowItem] = useState<number>(8);
   const [noMoreMsg, setNoMoreMsg] = useState<boolean>(false);
   const ListMore = () => {
@@ -17,12 +17,12 @@ export const StudyList = () => {
       setNoMoreMsg(true);
     }
   };
-
   return (
     <>
       <List>
-        {data?.totalStudies?.slice(0, showItem).map((studyInfo) => (
+        {data?.totalStudies?.slice(0, showItem).map((studyInfo: Study) => (
           <StudyCard
+            link={studyInfo.chatLink}
             bgImg={`https://imagedelivery.net/akzZnR6sxZ1bwXZp9XYgsg/${studyInfo?.image}/public`}
             key={studyInfo.id}
             studyId={studyInfo.id}

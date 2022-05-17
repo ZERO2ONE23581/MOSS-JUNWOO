@@ -59,7 +59,7 @@ export default function NoticePage() {
         <div className="btn-group">
           <Link href={`/study/${data?.notice?.studyId}/notice`}>
             <a>
-              <Button text="목록" className="list" />
+              <Button type="button" text="목록" className="list" />
             </a>
           </Link>
 
@@ -67,7 +67,7 @@ export default function NoticePage() {
             href={`/study/${data?.notice?.studyId}/notice/edit/${data?.notice?.id}`}
           >
             <a>
-              <Button text="수정" className="modify" />
+              <Button type="button" text="수정" className="modify" />
             </a>
           </Link>
           <button className="delete" onClick={deleteAlert}>

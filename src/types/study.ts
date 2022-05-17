@@ -3,7 +3,8 @@ import { Json } from 'twilio/lib/interfaces';
 
 export interface IStudyResponse {
   ok: boolean;
-  study: IStudyWithUser;
+  study: IStudyWithUser | any;
+  totalStudies: Study | any;
 }
 export interface IStudyWithUser extends Study {
   user: User;
@@ -30,5 +31,5 @@ export interface studyForm {
 export interface IStudyResponse {
   ok: boolean;
   myStudy: Study[];
-  totalStudies: Study[];
+  totalStudies: Study[] | any;
 }

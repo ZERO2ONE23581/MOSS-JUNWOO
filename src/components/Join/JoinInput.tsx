@@ -3,11 +3,11 @@ import { UseFormRegisterReturn } from 'react-hook-form';
 //TS
 interface InputProps {
   required: boolean;
-  name: string;
-  type: string;
-  register: UseFormRegisterReturn;
-  placeholer: string;
-  label: string;
+  name?: string;
+  type?: string;
+  register?: UseFormRegisterReturn;
+  placeholer?: string;
+  label?: string;
 }
 
 export default function JoinInput({

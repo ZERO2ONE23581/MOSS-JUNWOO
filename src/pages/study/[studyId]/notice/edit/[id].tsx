@@ -26,7 +26,7 @@ export default function NoticePage(): JSX.Element {
   const [editNotice, { loading, data }] = useMutation('/api/notice/edit');
 
   //FORM
-  const [noticeList, setNoticeList] = useState<NoticeData[]>([]);
+  let [noticeList, setNoticeList] = useState<NoticeData[]>([]);
   const [category, setCategory] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
