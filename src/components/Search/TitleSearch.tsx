@@ -48,7 +48,7 @@ export const TitleSearch = () => {
       {!data?.ok && !data?.error && <StudyList />}
       {!data?.ok && data?.error && (
         <NoSearchResult>
-          <p className="error-msg">"{data?.error}... 🧐"</p>
+          <p className="error-msg">{data?.error}... 🧐</p>
           <p className="msg">
             스터디 이름 또는 스터디 종류(category)를 검색해주세요.
           </p>
