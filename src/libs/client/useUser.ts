@@ -7,7 +7,9 @@ export interface IUser {
 }
 
 export default function () {
-  const { data, error } = useSWR<IUser>('/api/users/loggedInUser');
+  const { data, error } = useSWR<IUser>(
+    typeof window === 'undefined' ? null : '/api/users/loggedInUser',
+  );
   //
   return {
     loading: !data && !error,
